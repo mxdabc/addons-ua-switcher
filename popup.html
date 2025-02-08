@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Choose a UA!</title>
+	<link rel="stylesheet" href="popup.css"/>
+</head>
+<body>
+	<div class="container">
+		<div class="ua_details all hide">
+			<strong>UA (所有站点):</strong> <span id="current_ua"></span>
+			<button class="save" id="btnResetAll">重置</button>
+		</div>
+		<div class="ua_details domain hide">
+			<strong>UA (当前域名):</strong> <span id="current_ua_this_domain"></span>
+			<button class="save" id="btnResetThisDomain">重置</button>
+		</div>
+	</div>
+	<strong>选择一个用户代理:</strong>
+	<form id="form">
+		<input type="hidden" name="current_domain" value="" class="current_domain">
+		<div class="form-field">
+			<em>基础:</em>
+			<div>
+				<label><input type="radio" name="ua" value="Default">默认</label>
+				<label><input type="radio" name="ua" value="Chrome">Chrome MacOSX</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="IE 11">IE 11</label>
+				<label><input type="radio" name="ua" value="IE 9">IE 9</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="Epiphany">Epiphany</label>
+				<label><input type="radio" name="ua" value="FreeBSD">FreeBSD</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="iPhoneChrome">iPhone (Chrome)</label>
+				<label><input type="radio" name="ua" value="iPhoneSafari">iPhone (Safari)</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="AndroidXiaoMi">小米浏览器(安卓)</label>
+				<label><input type="radio" name="ua" value="iPad">iPad</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="QQ">QQ</label>
+				<label><input type="radio" name="ua" value="WeChat">微信</label>
+			</div>
+			<hr>
+			<em>高级:</em>
+			<div>
+				<label><input type="radio" name="ua" value="VidaaTV">Vidaa TV</label>
+				<label><input type="radio" name="ua" value="BYD">比亚迪 Dilink</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="Tieba">贴吧/知乎</label>
+				<label><input type="radio" name="ua" value="easysearch">EasySearch</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="BaiduSpider">百度蜘蛛</label>
+				<label><input type="radio" name="ua" value="GoogleSpider">谷歌蜘蛛</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="BingSpider">必应蜘蛛</label>
+				<label><input type="radio" name="ua" value="YahooSpider">雅虎蜘蛛</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="curl">curl</label>
+				<label><input type="radio" name="ua" value="censys">censys</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="UptimeRobot">UptimeRobot</label>
+				<label><input type="radio" name="ua" value="Apachehttpclient">Apachehttpclient</label>
+			</div>
+			<div>
+				<label><input type="radio" name="ua" value="Gohttpclient">Gohttpclient</label>
+				<label><input type="radio" name="ua" value="AhrefsBot">AhrefsBot</label>
+			</div>
+		</div>
+		<div class="form-field">
+			<button class="save" id="btnSaveAll">所有站点</button>
+			<button class="save" id="btnSaveThisDomain">当前域名</button>
+		</div>
+	</form>
+	<script src="popup.js"></script>
+</body>
+</html>

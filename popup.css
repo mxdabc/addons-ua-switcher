@@ -1,0 +1,10 @@
+body {
+	width: 290px;
+	border: 0;
+	background-color: #fff;
+	color: #000;
+}
+
+.hide {
+	display: none;
+}
