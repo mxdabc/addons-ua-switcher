@@ -2,83 +2,81 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Choose a UA!</title>
+	<title>UA Switcher</title>
 	<link rel="stylesheet" href="popup.css"/>
 </head>
 <body>
 	<div class="container">
 		<div class="ua_details all hide">
-			<strong>UA (所有站点):</strong> <span id="current_ua"></span>
-			<button class="save" id="btnResetAll">重置</button>
+			<strong>全局UA:</strong> <span id="current_ua"></span>
+			<button class="save reset" id="btnResetAll">重置</button>
 		</div>
 		<div class="ua_details domain hide">
-			<strong>UA (当前域名):</strong> <span id="current_ua_this_domain"></span>
-			<button class="save" id="btnResetThisDomain">重置</button>
+			<strong>当前域名UA:</strong> <span id="current_ua_this_domain"></span>
+			<button class="save reset" id="btnResetThisDomain">重置</button>
 		</div>
 	</div>
-	<strong>选择一个用户代理:</strong>
+	
+	<h3>选择用户代理</h3>
 	<form id="form">
 		<input type="hidden" name="current_domain" value="" class="current_domain">
-		<div class="form-field">
-			<em>基础:</em>
-			<div>
+		
+		<div class="form-section">
+			<em>基础浏览器</em>
+			<div class="radio-group">
 				<label><input type="radio" name="ua" value="Default">默认</label>
-				<label><input type="radio" name="ua" value="Chrome">Chrome MacOSX</label>
-			</div>
-			<div>
+				<label><input type="radio" name="ua" value="Chrome">Chrome (MacOS)</label>
 				<label><input type="radio" name="ua" value="IE 11">IE 11</label>
 				<label><input type="radio" name="ua" value="IE 9">IE 9</label>
-			</div>
-			<div>
 				<label><input type="radio" name="ua" value="Epiphany">Epiphany</label>
 				<label><input type="radio" name="ua" value="FreeBSD">FreeBSD</label>
 			</div>
-			<div>
+		</div>
+		
+		<div class="form-section">
+			<em>移动设备</em>
+			<div class="radio-group">
 				<label><input type="radio" name="ua" value="iPhoneChrome">iPhone (Chrome)</label>
 				<label><input type="radio" name="ua" value="iPhoneSafari">iPhone (Safari)</label>
-			</div>
-			<div>
 				<label><input type="radio" name="ua" value="AndroidXiaoMi">小米浏览器(安卓)</label>
 				<label><input type="radio" name="ua" value="iPad">iPad</label>
-			</div>
-			<div>
-				<label><input type="radio" name="ua" value="QQ">QQ</label>
+				<label><input type="radio" name="ua" value="QQ">QQ浏览器</label>
 				<label><input type="radio" name="ua" value="WeChat">微信</label>
 			</div>
-			<hr>
-			<em>高级:</em>
-			<div>
+		</div>
+		
+		<div class="form-section">
+			<em>特殊设备</em>
+			<div class="radio-group">
 				<label><input type="radio" name="ua" value="VidaaTV">Vidaa TV</label>
 				<label><input type="radio" name="ua" value="BYD">比亚迪 Dilink</label>
 			</div>
-			<div>
-				<label><input type="radio" name="ua" value="Tieba">贴吧/知乎</label>
-				<label><input type="radio" name="ua" value="easysearch">EasySearch</label>
-			</div>
-			<div>
+		</div>
+		
+		<div class="form-section">
+			<em>爬虫/工具</em>
+			<div class="radio-group">
 				<label><input type="radio" name="ua" value="BaiduSpider">百度蜘蛛</label>
 				<label><input type="radio" name="ua" value="GoogleSpider">谷歌蜘蛛</label>
-			</div>
-			<div>
 				<label><input type="radio" name="ua" value="BingSpider">必应蜘蛛</label>
 				<label><input type="radio" name="ua" value="YahooSpider">雅虎蜘蛛</label>
-			</div>
-			<div>
 				<label><input type="radio" name="ua" value="curl">curl</label>
-				<label><input type="radio" name="ua" value="censys">censys</label>
-			</div>
-			<div>
 				<label><input type="radio" name="ua" value="UptimeRobot">UptimeRobot</label>
-				<label><input type="radio" name="ua" value="Apachehttpclient">Apachehttpclient</label>
-			</div>
-			<div>
-				<label><input type="radio" name="ua" value="Gohttpclient">Gohttpclient</label>
-				<label><input type="radio" name="ua" value="AhrefsBot">AhrefsBot</label>
 			</div>
 		</div>
-		<div class="form-field">
-			<button class="save" id="btnSaveAll">所有站点</button>
-			<button class="save" id="btnSaveThisDomain">当前域名</button>
+		
+		<div class="form-section custom-ua">
+			<em>自定义UA</em>
+			<div>
+				<input type="radio" name="ua" id="customUaRadio" value="custom">
+				<label for="customUaRadio">使用自定义</label>
+			</div>
+			<textarea id="customUaInput" placeholder="输入自定义User-Agent字符串..." disabled></textarea>
+		</div>
+		
+		<div class="action-buttons">
+			<button class="save all-sites" id="btnSaveAll">应用到所有站点</button>
+			<button class="save current-site" id="btnSaveThisDomain">仅当前域名</button>
 		</div>
 	</form>
 	<script src="popup.js"></script>
